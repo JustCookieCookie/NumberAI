@@ -15,8 +15,8 @@ class FullNumberAI {
     //Генерируем в файл 9 нулей (если нужно)
     int ten = 1;
     String stroka0 = "0";
-    String filePath0 = "C:\\Users\\danii\\OneDrive\\Рабочий стол\\Программы\\NumberAI\\NumberBase.txt";
-    String filePathTest = "C:\\Users\\danii\\OneDrive\\Рабочий стол\\Программы\\NumberAI\\NumberBase.txt";
+    String filePath0 = "NumberBase.txt";
+    String filePathTest = "NumberBase.txt";
         File file = new File(filePathTest);
         if (file.length() == 0) {       //Проверяем длинну файла, генерируем только если файл пуст
             do {
@@ -34,7 +34,7 @@ class FullNumberAI {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Это нейросеть которая может распозновать цифры от 1 до 9! При надобности надо будет обучить её!");
 
-        String filePath = "C:\\Users\\danii\\OneDrive\\Рабочий стол\\Программы\\NumberAI\\NumberBase.txt"; //Файл
+        String filePath = "NumberBase.txt"; //Файл
         int userNumber = 0; //Число пользователя
         int stroka = 0; //Переменная отвечает за нужную строчку из чтение файла
         int strokaHelp = 0; //Переменная, которая помогает прочитать нужный ряд
@@ -72,13 +72,13 @@ class FullNumberAI {
                                     System.out.println("Ваше число " + randomNumber + " (Yes или No)?");
                                     String userAnswer = scanner3.nextLine();                               //Спрашиваем это число или нет
 
-                                    if (userAnswer.equals("Yes") || userAnswer.equals("yes") || userAnswer.equals("YES")) {
+                                    if (userAnswer.equalsIgnoreCase("yes")) {
 
                                     //Переписываем нужную строчку из файла на нужное число
                                     switch (randomNumber){
 
                                         case 1:
-                                        String filePath11 = "C:\\Users\\danii\\OneDrive\\Рабочий стол\\Программы\\NumberAI\\NumberBase.txt";
+                                        String filePath11 = "NumberBase.txt";
                                         String newContent11 = "" + randomNumber;
                                         int lineNumberToReplace11 = userNumber - 1;
 
@@ -106,7 +106,7 @@ class FullNumberAI {
                                         break;
 
                                         case 2:
-                                        String filePath22 = "C:\\Users\\danii\\OneDrive\\Рабочий стол\\Программы\\NumberAI\\NumberBase.txt";
+                                        String filePath22 = "NumberBase.txt";
                                         String newContent22 = "" + randomNumber;
                                         int lineNumberToReplace22 = userNumber - 1;
 
@@ -134,7 +134,7 @@ class FullNumberAI {
                                         break;
 
                                         case 3:
-                                        String filePath33 = "C:\\Users\\danii\\OneDrive\\Рабочий стол\\Программы\\NumberAI\\NumberBase.txt";
+                                        String filePath33 = "NumberBase.txt";
                                         String newContent33 = "" + randomNumber;
                                         int lineNumberToReplace33 = userNumber - 1;
 
@@ -162,7 +162,7 @@ class FullNumberAI {
                                         break;
 
                                         case 4:
-                                        String filePath44 = "C:\\Users\\danii\\OneDrive\\Рабочий стол\\Программы\\NumberAI\\NumberBase.txt";
+                                        String filePath44 = "NumberBase.txt";
                                         String newContent44 = "" + randomNumber;
                                         int lineNumberToReplace44 = userNumber - 1;
 
@@ -190,7 +190,7 @@ class FullNumberAI {
                                         break;
 
                                         case 5:
-                                        String filePath55 = "C:\\Users\\danii\\OneDrive\\Рабочий стол\\Программы\\NumberAI\\NumberBase.txt";
+                                        String filePath55 = "NumberBase.txt";
                                         String newContent55 = "" + randomNumber;
                                         int lineNumberToReplace55 = userNumber - 1;
 
@@ -218,7 +218,7 @@ class FullNumberAI {
                                         break;
 
                                         case 6:
-                                        String filePath66 = "C:\\Users\\danii\\OneDrive\\Рабочий стол\\Программы\\NumberAI\\NumberBase.txt";
+                                        String filePath66 = "NumberBase.txt";
                                         String newContent66 = "" + randomNumber;
                                         int lineNumberToReplace66 = userNumber - 1;
 
@@ -246,7 +246,7 @@ class FullNumberAI {
                                         break;
 
                                         case 7:
-                                        String filePath77 = "C:\\Users\\danii\\OneDrive\\Рабочий стол\\Программы\\NumberAI\\NumberBase.txt";
+                                        String filePath77 = "NumberBase.txt";
                                         String newContent77 = "" + randomNumber;
                                         int lineNumberToReplace77 = userNumber - 1;
 
@@ -274,7 +274,7 @@ class FullNumberAI {
                                         break;
 
                                         case 8:
-                                        String filePath88 = "C:\\Users\\danii\\OneDrive\\Рабочий стол\\Программы\\NumberAI\\NumberBase.txt";
+                                        String filePath88 = "NumberBase.txt";
                                         String newContent88 = "" + randomNumber;
                                         int lineNumberToReplace88 = userNumber - 1;
 
@@ -302,7 +302,7 @@ class FullNumberAI {
                                         break;
 
                                         case 9:
-                                        String filePath99 = "C:\\Users\\danii\\OneDrive\\Рабочий стол\\Программы\\NumberAI\\NumberBase.txt";
+                                        String filePath99 = "NumberBase.txt";
                                         String newContent99 = "" + randomNumber;
                                         int lineNumberToReplace99 = userNumber - 1;
 
@@ -332,11 +332,11 @@ class FullNumberAI {
 
                                         doWhile = 2;  //действия если то число
                                     }
-                                    if (userAnswer.equals("No") || userAnswer.equals("no") || userAnswer.equals("NO")) {
+                                    if (userAnswer.equalsIgnoreCase("no")) {
                                         System.out.println("Хорошо, это не ваше число!");
                                         doWhile = 1;  //действия если не то число
                                     }
-                                    if (!userAnswer.equals("Yes") && !userAnswer.equals("yes") && !userAnswer.equals("YES") && !userAnswer.equals("No") && !userAnswer.equals("no") && !userAnswer.equals("NO")) {
+                                    if (!userAnswer.equalsIgnoreCase("yes") && !userAnswer.equalsIgnoreCase("no")) {
                                         System.out.println("Я не понимаю вашего ответа!");
                                         doWhile = 1;         //Если ответ не Yes и не No
                                     }
